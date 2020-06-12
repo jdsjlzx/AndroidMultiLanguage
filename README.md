@@ -7,7 +7,7 @@ APP实现多语言（国际化）过程，兼容Android 8.0，解决了原项目
 
 主要是在基类里面添加以下方法：
 
-'
+```
 @Override
 public void applyOverrideConfiguration(Configuration overrideConfiguration) {
     // 兼容androidX在部分手机切换语言失败问题
@@ -18,12 +18,14 @@ public void applyOverrideConfiguration(Configuration overrideConfiguration) {
     }
     super.applyOverrideConfiguration(overrideConfiguration);
 }
-'
+```
 
 # 版本说明
 
-1.1
+**1.1
+
 支持Androidx
 
-1.0
+**1.0
+
 优化代码
