@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidMultiLanguage.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidMultiLanguage.iml" group="AndroidMultiLanguage" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="AndroidMultiLanguage/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/common.iml" group="AndroidMultiLanguage/common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/languagelib/languagelib.iml" filepath="$PROJECT_DIR$/.idea/modules/languagelib/languagelib.iml" group="AndroidMultiLanguage/languagelib" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tool/tool.iml" filepath="$PROJECT_DIR$/.idea/modules/tool/tool.iml" group="AndroidMultiLanguage/tool" />
+    </modules>
+  </component>
+</project>
