@@ -51,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/open_tool"
+            android:onClick="openTool"
             />
 
         <Button
@@ -58,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/open_common"
+            android:onClick="openCommon"
             />
     </LinearLayout>
 </LinearLayout>

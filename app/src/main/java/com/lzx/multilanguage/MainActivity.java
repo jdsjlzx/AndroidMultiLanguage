@@ -18,8 +18,6 @@ import org.greenrobot.eventbus.ThreadMode;
 
 public class MainActivity extends BaseActivity {
 
-    Button toolBtn, commonBtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,22 +25,6 @@ public class MainActivity extends BaseActivity {
         setTitle(R.string.app_name);
         EventBus.getDefault().register(this);
 
-        toolBtn = findViewById(R.id.btn_openTool);
-        commonBtn = findViewById(R.id.btn_openCommon);
-
-        toolBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ToolsMainActivity.class));
-            }
-        });
-        commonBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, CommonMainActivity.class));
-
-            }
-        });
     }
 
     @Override
@@ -81,9 +63,4 @@ public class MainActivity extends BaseActivity {
         Log.d("onchange", "ChangeLanguage");
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        android.os.Process.killProcess(android.os.Process.myPid());
-    }
 }

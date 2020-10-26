@@ -1,12 +1,12 @@
 package com.baidu.tool;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.didichuxing.tool.R;
+import com.finddreams.base.BaseActivity;
 
-public class ToolsMainActivity extends AppCompatActivity {
+public class ToolsMainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -137,7 +137,7 @@ public class MultiLanguageUtil {
     }
 
     /**
-     * 设置语言
+     * 设置语言(适用于8.0以下)
      */
     public void setConfiguration(Context context) {
         if (context == null) {
@@ -147,49 +147,31 @@ public class MultiLanguageUtil {
         Context appContext = context.getApplicationContext();
         Log.e(TAG, "setConfiguration " + context);
         Locale targetLocale = getLanguageLocale(appContext);
-        Locale.setDefault(targetLocale);
-        Configuration configuration = appContext.getResources().getConfiguration();
+        Resources resources = appContext.getResources();
+        Configuration configuration = resources.getConfiguration();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             configuration.setLocale(targetLocale);
-            context.createConfigurationContext(configuration);
         } else {
             configuration.locale = targetLocale;
         }
-        Resources resources = appContext.getResources();
         DisplayMetrics dm = resources.getDisplayMetrics();
         resources.updateConfiguration(configuration, dm);//语言更换生效的代码!
     }
 
+    /**
+     * 8.0增加了通过config.setLocales去修改多语言
+     * @param context
+     * @return
+     */
     @TargetApi(Build.VERSION_CODES.N)
     private static Context updateResources(Context context) {
         Resources resources = context.getResources();
         Configuration configuration = resources.getConfiguration();
         Locale locale = getInstance().getLanguageLocale(context);
-        Log.d(TAG, "getLanguage ${getLanguage(locale)}");
+        Log.d(TAG, "getLanguage locale " + locale);
         LocaleList localeList = new LocaleList(locale);
-        LocaleList.setDefault(localeList);
         configuration.setLocales(localeList);
-        configuration.setLocale(locale);
         return context.createConfigurationContext(configuration);
     }
 
-    /**
-     * 设置语言类型
-     */
-    public void setApplicationLanguage(Context context) {
-        Resources resources = context.getResources();
-        DisplayMetrics dm = resources.getDisplayMetrics();
-        Configuration config = resources.getConfiguration();
-        Locale locale = getLanguageLocale(context);
-        config.locale = locale;
-        Log.e(TAG, "setApplicationLanguage  " + getLanguageName(context));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            LocaleList localeList = new LocaleList(locale);
-            LocaleList.setDefault(localeList);
-            config.setLocales(localeList);
-            context.createConfigurationContext(config);
-            Locale.setDefault(locale);
-        }
-        resources.updateConfiguration(config, dm);
-    }
 }

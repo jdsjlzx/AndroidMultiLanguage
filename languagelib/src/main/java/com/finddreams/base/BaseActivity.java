@@ -7,6 +7,8 @@ import android.util.Log;
 
 import com.finddreams.languagelib.MultiLanguageUtil;
 
+import java.util.Locale;
+
 public class BaseActivity extends AppCompatActivity {
 
     protected String TAG = getClass().getSimpleName();
@@ -15,8 +17,9 @@ public class BaseActivity extends AppCompatActivity {
     protected void attachBaseContext(Context newBase) {
         Log.e(TAG, "attachBaseContext");
         super.attachBaseContext(MultiLanguageUtil.attachBaseContext(newBase));
-        //app杀进程启动后会调用Activity attachBaseContext
-        MultiLanguageUtil.getInstance().setConfiguration(newBase);
+        Locale locale = getResources().getConfiguration().locale;
+        Log.e(TAG, "attachBaseContext locale " + locale  + "  getLanguageLocale " + MultiLanguageUtil.getInstance().getLanguageLocale(this));
+
     }
 
     @Override

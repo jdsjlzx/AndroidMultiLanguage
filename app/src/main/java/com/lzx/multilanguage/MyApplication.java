@@ -28,7 +28,7 @@ public class MyApplication extends Application{
         MultiLanguageUtil.getInstance().saveSystemCurrentLanguage(base);
         super.attachBaseContext(base);
         //app刚启动getApplicationContext()为空
-        MultiLanguageUtil.getInstance().setConfiguration(getApplicationContext());
+        //MultiLanguageUtil.getInstance().setConfiguration(getApplicationContext());
     }
 
     @Override

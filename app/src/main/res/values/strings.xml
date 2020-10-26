@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Android MultiLanguage</string>
     <string name="open_landscape">Open the screen page</string>
+    <string name="followsystem">Follow system</string>
     <string name="open_webview">Open the WebView page</string>
     <string name="setting_language_title">English</string>
     <string name="setting_language">set language</string>
